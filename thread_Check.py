@@ -4,6 +4,11 @@ import threading
 list_Of_Threads = []
 
 
+# Function that appends thread to list
+def append_Thread(thread):
+    list_Of_Threads.append(thread)
+
+
 # function thread to check if threads are alive
 def thread_Check():
     # checker if a thread died
@@ -22,8 +27,22 @@ def thread_Check():
         pass
 
 
-# Create thread
-thread_1 = threading.Thread(target=thread_Check)
+# Active thread being checked
+def active_Thread():
+    active = True
 
-# Start thread
+    while active:
+        pass
+
+
+# Create threads
+thread_1 = threading.Thread(target=active_Thread)
+thread_2 = threading.Thread(target=thread_Check)
+
+
+# Start threads
 thread_1.start()
+thread_2.start()
+
+# Append active thread to list
+append_Thread(thread_1)
