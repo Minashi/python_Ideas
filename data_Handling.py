@@ -8,9 +8,8 @@ def save(List):
     output_file = open(FILE_NAME, 'wb')
 
     while again:
-        for item in List:
-            pickle.dump(item, output_file)
-            again = False
+        pickle.dump(List, output_file)
+        again = False
 
     output_file.close()
     print("Data was written to ", FILE_NAME)
